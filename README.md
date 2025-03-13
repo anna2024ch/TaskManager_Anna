@@ -1,96 +1,185 @@
-<<<<<<< HEAD
-# taskmanager_
-=======
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 Task Management App 🚀
 
-<<<<<<< HEAD
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📜 Projektbeschreibung
 
-## About Laravel
+Dies ist eine Webanwendung zur Aufgabenverwaltung, die es Benutzern ermöglicht, Aufgaben über CRUD-Operationen zu verwalten. Benutzer können Aufgaben erstellen, bearbeiten, löschen (weiches Löschen) und eine Liste von Aufgaben anzeigen. Die Anwendung ermöglicht die Erstellung von Aufgaben mit Titeln, Beschreibungen und einem Status für die Erledigung. Sie wurde mit Laravel entwickelt und folgt der MVC-Architektur.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ⚙️ Funktionen
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Benutzerauthentifizierung
+- Anmeldung und Registrierung von Benutzern.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Aufgabenverwaltung
+- Erstellen einer neuen Aufgabe mit Titel und Beschreibung.
+- Bearbeiten und Aktualisieren einer bestehenden Aufgabe.
+- Weiches Löschen einer Aufgabe.
+- Anzeigen der Liste aller Aufgaben mit deren Status (erledigt oder offen).
 
-## Learning Laravel
+### Statusverwaltung von Aufgaben
+- Markieren von Aufgaben als erledigt oder offen.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🗄 Projektstruktur
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+| Ebene         | Beschreibung |
+|--------------|--------------|
+| `Modelle`    | Enthält das `Task`-Modell zur Interaktion mit der Datenbank sowie das `User`-Modell für die Benutzerauthentifizierung. |
+| `Controller` | Der `TaskController` verwaltet die CRUD-Operationen für Aufgaben. |
+| `Views`      | Blade-Templates zur Anzeige, Erstellung, Bearbeitung und Auflistung von Aufgaben. |
+| `Routen`     | Ressourcendefinierte Routen zur Steuerung der Aufgabenverwaltung. |
+| `Migrationen` | Enthält das Datenbankschema für Aufgaben mit Feldern wie `titel`, `beschreibung` und `erledigt`. |
+| `Authentifizierung` | Das User-Modell kümmert sich um die Benutzerauthentifizierung, Passwort-Hashing und Anmeldefunktionalität. |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 💻 Technologien
 
-## Laravel Sponsors
+- PHP 8.1+ für serverseitige Skripterstellung.
+- Laravel 9 Framework für MVC-Struktur und Routing.
+- MySQL als Datenbank.
+- Bootstrap 5 für das Front-End-Design.
+- Blade Templating-Engine für die dynamische Inhaltserstellung.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠 Installation
 
-### Premium Partners
+### Projekt klonen
+```bash
+git clone https://github.com/your-username/task-manager.git
+cd task-manager
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Abhängigkeiten installieren
+Stelle sicher, dass Composer installiert ist, und führe dann aus:
+```bash
+composer install
+```
 
-## Contributing
+### Umgebung einrichten
+Kopiere die `.env.example`-Datei nach `.env`:
+```bash
+cp .env.example .env
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Datenbank konfigurieren
+Aktualisiere die `.env`-Datei mit deinen Datenbank-Anmeldedaten:
+```makefile
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=task_manager
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Code of Conduct
+### Migrationen ausführen
+```bash
+php artisan migrate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Daten (optional) seeden
+```bash
+php artisan db:seed
+```
 
-## Security Vulnerabilities
+### Entwicklungsserver starten
+```bash
+php artisan serve
+```
+Nun kannst du die App unter [http://127.0.0.1:8000](http://127.0.0.1:8000) aufrufen.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🧑‍💻 Verzeichnisstruktur
 
-## License
+```plaintext
+app/
+├── Http/
+│   ├── Controllers/
+│   │   └── TaskController.php
+│   └── Middleware/
+│
+├── Models/
+│   ├── Task.php
+│   └── User.php
+│
+database/
+├── migrations/
+│   └── create_tasks_table.php
+└── seeders/
+    └── DatabaseSeeder.php
+resources/
+├── views/
+│   ├── tasks/
+│   │   ├── create.blade.php
+│   │   ├── edit.blade.php
+│   │   └── index.blade.php
+│   └── layouts/
+│       └── app.blade.php
+routes/
+└── web.php
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
->>>>>>> 285fa03 (Initial commit)
-=======
-⚙️ Funktionen:
-Benutzerauthentifizierung: Anmeldung und Registrierung von Benutzern.
-Aufgabenverwaltung:
-Erstellen einer neuen Aufgabe mit Titel und Beschreibung.
-Bearbeiten und Aktualisieren einer bestehenden Aufgabe.
-Weiches Löschen einer Aufgabe.
-Anzeigen der Liste aller Aufgaben mit deren Status (erledigt oder offen).
-Statusverwaltung von Aufgaben:
-Markieren von Aufgaben als erledigt oder offen.
-🗄 Projektstruktur:
-Ebene	Beschreibung
-Modelle	Das Task-Modell interagiert mit der Datenbank und speichert sowie ruft Aufgabendaten ab. Das User-Modell kümmert sich um die Benutzerauthentifizierung.
-Controller	Der TaskController verwaltet die CRUD-Operationen für Aufgaben.
-Views	Blade-Templates zum Anzeigen von Aufgaben und Bearbeiten der Aufgabenoperationen (erstellen, bearbeiten, auflisten).
-Routen	Ressourcenrouten für Aufgaben mit Methoden zum Anzeigen, Erstellen, Bearbeiten und Löschen von Aufgaben.
-Migrationen	Datenbankschema für Aufgaben, einschließlich Felder wie titel, beschreibung und erledigt.
-Authentifizierung	Das User-Modell kümmert sich um die Benutzerauthentifizierung, Passwort-Hashing und Anmeldefunktionalität.
-💻 Technologien:
-PHP 8.1+ für serverseitige Skripterstellung.
-Laravel 9 Framework für MVC-Struktur und Routing.
-MySQL als Datenbank.
-Bootstrap 5 für das Front-End-Design.
-Blade Templating-Engine für die dynamische Inhaltserstellung.
->>>>>>> 87df3212d2d157e82f8642140ac6e280429aa017
+## 📅 Routen
+
+| Methode | Route | Beschreibung |
+|---------|-------|--------------|
+| GET | `/tasks` | Alle Aufgaben anzeigen. |
+| GET | `/tasks/create` | Formular zum Erstellen einer neuen Aufgabe anzeigen. |
+| POST | `/tasks` | Eine neue Aufgabe speichern. |
+| GET | `/tasks/{task}/edit` | Formular zum Bearbeiten einer bestehenden Aufgabe anzeigen. |
+| PUT/PATCH | `/tasks/{task}` | Die Aufgabe aktualisieren. |
+| DELETE | `/tasks/{task}` | Die Aufgabe löschen. |
+
+## 📸 Screenshots
+
+- **Formular zum Erstellen einer Aufgabe**: Ein einfaches Formular zur Erstellung einer neuen Aufgabe mit Titel und Beschreibung.
+- **Aufgabenliste**: Eine Liste, die alle Aufgaben anzeigt, mit Optionen zum Bearbeiten, Löschen und Markieren als erledigt.
+
+## ✨ Verbesserungen
+
+- **Formularvalidierung**: Alle Formulare verwenden die integrierte Laravel-Validierung für das Feld `titel` und optional für `beschreibung`.
+- **Fehlerbehandlung**: Fehler werden mithilfe der Bootstrap-Alert-Klassen angezeigt, wenn die Formularvalidierung fehlschlägt.
+- **UI**: Benutzerfreundliche Benutzeroberfläche zur Verwaltung von Aufgaben mit Bootstrap 5-Komponenten.
+
+## 📝 Beispielcode
+
+### TaskController.php
+```php
+public function store(Request $request)
+{
+    $request->validate([
+        'titel' => 'required|max:255',
+        'beschreibung' => 'nullable'
+    ]);
+
+    Task::create($request->all());
+    return redirect()->route('tasks.index')->with('erfolg', 'Aufgabe erstellt!');
+}
+```
+
+### Task Modell
+```php
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Task extends Model
+{
+    protected $fillable = ['titel', 'beschreibung', 'erledigt'];
+}
+```
+
+### Create Task View (create.blade.php)
+```blade
+<form action="{{ route('tasks.store') }}" method="POST">
+    @csrf
+    <div class="mb-3">
+        <label for="titel" class="form-label">Titel</label>
+        <input type="text" class="form-control @error('titel') is-invalid @enderror" id="titel" name="titel" value="{{ old('titel') }}">
+        @error('titel')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+    <button type="submit" class="btn btn-primary">Speichern</button>
+    <a href="{{ route('tasks.index') }}" class="btn btn-secondary">Zurück</a>
+</form>
+```
+
+## 🏁 Fazit
+
+Diese Laravel-Aufgabenverwaltungs-App bietet eine solide Grundlage für die Verwaltung von Aufgaben mit vollständigen CRUD-Funktionalitäten. Sie ist leicht erweiterbar und anpassbar, um verschiedene Bedürfnisse zu erfüllen. Du kannst Funktionen wie Benutzerrollen, Auf
