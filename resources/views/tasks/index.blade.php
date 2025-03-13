@@ -19,6 +19,7 @@
                         <th>ID</th>
                         <th>Titel</th>
                         <th>Status</th>
+                        <th>Beschreibung</th>
                         <th>Aktionen</th>
                     </tr>
                 </thead>
@@ -34,6 +35,7 @@
                                     <span class="badge bg-warning">Offen</span>
                                 @endif
                             </td>
+                            <td>{{ $task->beschreibung }}</td>
                             <td>
                                 <a href="{{ route('tasks.edit', $task->id) }}"
                                    class="btn btn-sm btn-primary">Bearbeiten</a>
