@@ -82,7 +82,6 @@ php artisan db:seed
 ```bash
 php artisan serve
 ```
-Nun kannst du die App unter [http://127.0.0.1:8000](http://127.0.0.1:8000) aufrufen.
 
 ## 🧑‍💻 Verzeichnisstruktur
 
@@ -125,61 +124,4 @@ routes/
 | PUT/PATCH | `/tasks/{task}` | Die Aufgabe aktualisieren. |
 | DELETE | `/tasks/{task}` | Die Aufgabe löschen. |
 
-## 📸 Screenshots
 
-- **Formular zum Erstellen einer Aufgabe**: Ein einfaches Formular zur Erstellung einer neuen Aufgabe mit Titel und Beschreibung.
-- **Aufgabenliste**: Eine Liste, die alle Aufgaben anzeigt, mit Optionen zum Bearbeiten, Löschen und Markieren als erledigt.
-
-## ✨ Verbesserungen
-
-- **Formularvalidierung**: Alle Formulare verwenden die integrierte Laravel-Validierung für das Feld `titel` und optional für `beschreibung`.
-- **Fehlerbehandlung**: Fehler werden mithilfe der Bootstrap-Alert-Klassen angezeigt, wenn die Formularvalidierung fehlschlägt.
-- **UI**: Benutzerfreundliche Benutzeroberfläche zur Verwaltung von Aufgaben mit Bootstrap 5-Komponenten.
-
-## 📝 Beispielcode
-
-### TaskController.php
-```php
-public function store(Request $request)
-{
-    $request->validate([
-        'titel' => 'required|max:255',
-        'beschreibung' => 'nullable'
-    ]);
-
-    Task::create($request->all());
-    return redirect()->route('tasks.index')->with('erfolg', 'Aufgabe erstellt!');
-}
-```
-
-### Task Modell
-```php
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
-
-class Task extends Model
-{
-    protected $fillable = ['titel', 'beschreibung', 'erledigt'];
-}
-```
-
-### Create Task View (create.blade.php)
-```blade
-<form action="{{ route('tasks.store') }}" method="POST">
-    @csrf
-    <div class="mb-3">
-        <label for="titel" class="form-label">Titel</label>
-        <input type="text" class="form-control @error('titel') is-invalid @enderror" id="titel" name="titel" value="{{ old('titel') }}">
-        @error('titel')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-    </div>
-    <button type="submit" class="btn btn-primary">Speichern</button>
-    <a href="{{ route('tasks.index') }}" class="btn btn-secondary">Zurück</a>
-</form>
-```
-
-## 🏁 Fazit
-
-Diese Laravel-Aufgabenverwaltungs-App bietet eine solide Grundlage für die Verwaltung von Aufgaben mit vollständigen CRUD-Funktionalitäten. Sie ist leicht erweiterbar und anpassbar, um verschiedene Bedürfnisse zu erfüllen. Du kannst Funktionen wie Benutzerrollen, Auf
