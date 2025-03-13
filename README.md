@@ -3,6 +3,7 @@
 =======
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
+<<<<<<< HEAD
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
@@ -68,3 +69,28 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 >>>>>>> 285fa03 (Initial commit)
+=======
+⚙️ Funktionen:
+Benutzerauthentifizierung: Anmeldung und Registrierung von Benutzern.
+Aufgabenverwaltung:
+Erstellen einer neuen Aufgabe mit Titel und Beschreibung.
+Bearbeiten und Aktualisieren einer bestehenden Aufgabe.
+Weiches Löschen einer Aufgabe.
+Anzeigen der Liste aller Aufgaben mit deren Status (erledigt oder offen).
+Statusverwaltung von Aufgaben:
+Markieren von Aufgaben als erledigt oder offen.
+🗄 Projektstruktur:
+Ebene	Beschreibung
+Modelle	Das Task-Modell interagiert mit der Datenbank und speichert sowie ruft Aufgabendaten ab. Das User-Modell kümmert sich um die Benutzerauthentifizierung.
+Controller	Der TaskController verwaltet die CRUD-Operationen für Aufgaben.
+Views	Blade-Templates zum Anzeigen von Aufgaben und Bearbeiten der Aufgabenoperationen (erstellen, bearbeiten, auflisten).
+Routen	Ressourcenrouten für Aufgaben mit Methoden zum Anzeigen, Erstellen, Bearbeiten und Löschen von Aufgaben.
+Migrationen	Datenbankschema für Aufgaben, einschließlich Felder wie titel, beschreibung und erledigt.
+Authentifizierung	Das User-Modell kümmert sich um die Benutzerauthentifizierung, Passwort-Hashing und Anmeldefunktionalität.
+💻 Technologien:
+PHP 8.1+ für serverseitige Skripterstellung.
+Laravel 9 Framework für MVC-Struktur und Routing.
+MySQL als Datenbank.
+Bootstrap 5 für das Front-End-Design.
+Blade Templating-Engine für die dynamische Inhaltserstellung.
+>>>>>>> 87df3212d2d157e82f8642140ac6e280429aa017
